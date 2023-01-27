@@ -67,8 +67,10 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`Playbacks_History` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`Followed_Artists` (
+  `followed_id` INT AUTO_INCREMENT,
   `user_id` INT NOT NULL,
-  `artist_id` INT NULL DEFAULT NULL,
+  `artist_id` INT,
+  PRIMARY KEY (`followed_id`),
     FOREIGN KEY (`user_id`)
     REFERENCES `SpotifyClone`.`Users` (`user_id`),
     FOREIGN KEY (`artist_id`)
@@ -166,7 +168,5 @@ INSERT INTO SpotifyClone.Followed_Artists (user_id, artist_id)
     (8,	null),
     (9,	3),
     (10, 2);
-
-
 
 
